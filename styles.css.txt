@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Great Vibes';
+    src: url('GreatVibes-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%; /* Убедитесь, что высота html и body 100% */
+    margin: 0; /* Убираем все отступы */
+    overflow: hidden; /* Убираем возможность прокрутки */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('background.jpg'); /* Фоновое изображение для страницы */
+    background-size: cover; /* Заполнение фона */
+    background-position: center; /* Центрирование фона */
+    background-repeat: no-repeat; /* Запрет повторения фона */
+    background-color: #f8f8f8; /* Цвет фона на случай отсутствия изображения */
+}
+
+.cookie-container {
+    text-align: center;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.cookie {
+    position: relative;
+    width: 400px; /* Уменьшили ширину для адаптивности */
+    height: 400px; /* Уменьшили высоту для адаптивности */
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    user-select: none;
+    transform: translateY(-15%); /* Центрируем печенье по вертикали */
+}
+
+.whole-cookie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ширина 100% для адаптации к контейнеру */
+    height: auto; /* Автоматическая высота для поддержания пропорций */
+    transition: opacity 0.1s ease; /* Плавный переход для исчезновения */
+    pointer-events: none; /* Отключаем взаимодействие, когда печенье сломано */
+}
+
+.half {
+    position: absolute;
+    top: 35%; /* Позиция половинок 15% выше относительно центра */
+    width: 50%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(-50%); /* Позиция половинок печенья */
+    transition: transform 0.5s ease, opacity 0.1s ease;
+    pointer-events: none;
+}
+
+.cookie.break .whole-cookie {
+    opacity: 0; /* Скрыть целое печенье при анимации */
+}
+
+.cookie.break .half {
+    opacity: 1;
+}
+
+.cookie.break .left {
+    transform: translate(-65px, -50%) rotate(-20deg); /* Изменили позицию левой половинки */
+}
+
+.cookie.break .right {
+    transform: translate(65px, -50%) rotate(20deg); /* Изменили позицию правой половинки */
+}
+
+.prediction {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    z-index: 1;
+    text-align: center;
+    width: 80%;
+    font-family: 'Great Vibes', cursive;
+}

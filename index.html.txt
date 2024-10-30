@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Печенье с предсказанием</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cookie-container">
+        <div class="cookie" onclick="breakCookie()">
+            <img src="cookie-whole.png" class="whole-cookie" alt="Целое печенье">
+            <img src="cookie-left.png" class="half left" alt="Левая половина печенья">
+            <img src="cookie-right.png" class="half right" alt="Правая половина печенья">
+            <p class="prediction" id="prediction"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
